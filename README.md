@@ -2,10 +2,9 @@
 
 This repository contains all code that was written during my thesis project for the MSc Data Science at the UvA in collaboration with the City of Amsterdam. The aim of this project was to use historical data on the number of parked micromobility vehicles, along with neighborhood characteristics, to analyze and predict the parking occupancy on the sidewalks. 
 
+![](media/map.png)
+
 During the first part of this project a cluster analysis was done with the goal to identify spatial variations in the parking occupancy of micromobility vehicles with regard to neighborhood characteristics. The second part focused on training several machine learning models to predict the parking occupancy on the sidewalks using historical parking data, neighborhood characteristics and cluster results.
-
-
-![](media/emojis.png)
 
 ---
 
