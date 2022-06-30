@@ -22,7 +22,7 @@ Various data sources were used during this project. The main dataset is the micr
 
 ## How it works
 
-The ‘src’ folder contains the notebooks with the code written during this project. The code consists of several notebooks, which should be executed in the following order:
+The ‘src’ folder contains the notebooks with the code written during this project. The code consists of several notebooks that should be executed in the following order:
 1.	Pre-processing parking data: This notebook prepares the micromobility parking data. This includes dealing with missing values, removing outliers, transforming the data, and extracting features.
 2.	Preprocessing and merging neighborhood data: This notebook prepares the neighborhood datasets. After preparation, the data sets are merged with the parking data based on their geometric information.
 3.	Clustering and regression modelling: This notebook performs a cluster analysis of the aggregated parking and neighborhood data. In addition, three regression models (random forest, XGBoost and multilayer perceptron) were trained using different combinations of features to predict the parking occupancy of micromobility vehicles on the sidewalk.
