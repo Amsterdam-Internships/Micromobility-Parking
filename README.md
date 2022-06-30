@@ -12,7 +12,8 @@ During the first part of this project a cluster analysis was done with the goal 
 ## Data
 
 Various data sources were used during this project. The main dataset is the micromobility parking dataset provided by Trajan. This dataset is not publicly available and can be requested by the municipality of Amsterdam. In addition, the following open source datasets concerning various neighborhood characteristics were used:
--	Points of interest: https://maps.amsterdam.nl/open_geodata/?k=49
+-	Points of interest (non-residential functions): https://maps.amsterdam.nl/open_geodata/?k=49
+-	Points of interest (horeca): https://data.amsterdam.nl/datasets/GsY50tEkoJKCGw/
 -	Land use: https://maps.amsterdam.nl/open_geodata/?k=310
 -	Public transport: https://maps.amsterdam.nl/open_geodata/?k=381
 -	Shopping areas: https://maps.amsterdam.nl/open_geodata/?k=123
