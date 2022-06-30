@@ -1,114 +1,35 @@
-# Amsterdam Internships - Example README
+# Analysing and Predicting Micromobility Parking
 
-Explain in short what this repository is. Mind the target audience.
-No need to go into too much technical details if you expect some people would just use it as end-users 
-and don't care about the internals (so focus on what the code really *does*), not how.
-The *_How it works_* section below would contain more technical details for curious people.
+This repository contains all code that was written during my thesis project for the MSc Data Science at the UvA in collaboration with the City of Amsterdam. The aim of this project was to use historical data on the number of parked micromobility vehicles, along with neighborhood characteristics, to analyze and predict the parking occupancy on the sidewalks. 
 
-If applicable, you can also show an example of the final output.
+During the first part of this project a cluster analysis was done with the goal to identify spatial variations in the parking occupancy of micromobility vehicles with regard to neighborhood characteristics. The second part focused on training several machine learning models to predict the parking occupancy on the sidewalks using historical parking data, neighborhood characteristics and cluster results.
 
-![](media/examples/emojis.png)
+
+![](media/emojis.png)
 
 ---
 
 
-## Project Folder Structure
+## Data
 
-Explain briefly what's where so people can find their way around. For example:
-
-There are the following folders in the structure:
-
-1) [`resources`](./resources): Random nice resources, e.g. [`useful links`](./resources/README.md)
-1) [`src`](./src): Folder for all source files specific to this project
-1) [`scripts`](./scripts): Folder with example scripts for performing different tasks (could serve as usage documentation)
-1) [`tests`](./tests) Test example
-1) [`media`](./media): Folder containing media files (icons, video)
-1) ...
-
-OR
-
-Or use something like `tree` to include the overall structure with preferred level of detail (`-L 2` or `-d` or `-a`...)
-```buildoutcfg
-├── media --> you can still add comments and descriptions in this tree
-│   └── examples
-├── resources --> a lot of useful links here
-├── scripts
-├── src --
-└── tests
-```
-
-
-
-If you are lacking ideas on how to structure your code at the first place, take a look at [`CookieCutter`](https://drivendata.github.io/cookiecutter-data-science/)
-
----
-
-
-## Installation
-
-Explain how to set up everything. 
-Let people know if there are weird dependencies - if so feel free to add links to guides and tutorials.
-
-A person should be able to clone this repo, follow your instructions blindly, and still end up with something *fully working*!
-
-1) Clone this repository:
-    ```bash
-    git clone https://github.com/Amsterdam-Internships/InternshipAmsterdamGeneral
-    ```
-
-1) If you are using submodules don't forget to include `--recurse-submodules` to the step above or mention that people can still do it afterwards:
-   ```bash
-   git submodule update --init --recursive
-   ```
-
-1) Install all dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
----
-
-
-## Usage
-
-Explain example usage, possible arguments, etc. E.g.:
-
-To train... 
-
-
-```
-$ python train.py --some-importang-argument
-```
-
-If there are too many command line arguments, you can add a nice table with explanation (thanks, [Diana Epureano](https://www.linkedin.com/in/diana-epureanu-235104153/)!)
-
-|Argument | Type or Action | Description | Default |
-|---|:---:|:---:|:---:|
-|`--batch_size`| int| `Batch size.`|  32|
-|`--device`| str| `Training device, cpu or cuda:0.`| `cpu`|
-|`--early-stopping`|  `store_true`| `Early stopping for training of sparse transformer.`| True|
-|`--epochs`| int| `Number of epochs.`| 21|
-|`--input_size`|  int| `Input size for model, i.e. the concatenation length of te, se and target.`| 99|
-|`--loss`|  str|  `Type of loss to be used during training. Options: RMSE, MAE.`|`RMSE`|
-|`--lr`|  float| `Learning rate.`| 1e-3|
-|`--train_ratio`|  float| `Percentage of the training set.`| 0.7|
-|...|...|...|...|
-
-
-Alternatively, as a way of documenting the intended usage, you could add a `scripts` folder with a number of scripts for setting up the environment, performing training in different modes or different tasks, evaluation, etc (thanks, [Tom Lotze](https://www.linkedin.com/in/tom-lotze/)!)
+Various data sources were used during this project. The main dataset is the micromobility parking dataset provided by Trajan. This dataset is not publicly available and can be requested by the municipality of Amsterdam. In addition, the following open source datasets concerning various neighborhood characteristics were used:
+-	Points of interest: https://maps.amsterdam.nl/open_geodata/?k=49
+-	Land use: https://maps.amsterdam.nl/open_geodata/?k=310
+-	Public transport: https://maps.amsterdam.nl/open_geodata/?k=381
+-	Shopping areas: https://maps.amsterdam.nl/open_geodata/?k=123
 
 ---
 
 
 ## How it works
 
-You can explain roughly how the code works, what the main components are, how certain crucial steps are performed...
+The ‘src’ folder contains the notebooks with the code written during this project. The code consists of several notebooks, which should be executed in the following order:
+1.	Pre-processing parking data: This notebook prepares the micromobility parking data. This includes dealing with missing values, removing outliers, transforming the data, and extracting features.
+2.	Preprocessing and merging neighborhood data: This notebook prepares the neighborhood datasets. After preparation, the data sets are merged with the parking data based on their geometric information.
+3.	Clustering and regression modelling: This notebook performs a cluster analysis of the aggregated parking and neighborhood data. In addition, three regression models (random forest, XGBoost and multilayer perceptron) were trained using different combinations of features to predict the parking occupancy of micromobility vehicles on the sidewalk.
 
 ---
-## Acknowledgements
+## Contact
 
-
-Don't forget to acknowledge any work by others that you have used for your project. Add links and check whether the authors have explicitly stated citation preference for using the DOI or citing a paper or so. 
-For example:
-
-Our code uses [YOLOv5](https://github.com/ultralytics/yolov5) [![DOI](https://zenodo.org/badge/264818686.svg)](https://zenodo.org/badge/latestdoi/264818686)
+Johanna Fiebag, johanna.fiebag@gmail.com
 
